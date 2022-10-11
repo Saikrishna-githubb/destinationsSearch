@@ -13,13 +13,18 @@ class DestinationSearch extends Component {
     this.setState({ searchInput: event.target.value })
   }
 
+  searchResults = () => {
+    const {destinationsList} = this.props
+    const {searchInput} = this.state
+    const filteredList = destinationsList.filter((eachDestination) =>
+      eachDestination.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    return filteredList;
+  }
+
   render() {
     const { searchInput } = this.state
-    const { destinationsList } = this.props
-
-    const searchResults = destinationsList.filter(eachDestination =>
-      eachDestination.name.toLowerCase().includes(searchInput.toLowerCase()),
-    )
+    const searchResults = this.searchResults()
 
     return (
       <div className="app-container">

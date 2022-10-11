@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+In this project, let's build a **Destination Search** app by applying the concepts we have learned till now.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Refer to the image below:
 
-## Available Scripts
+<br/>
+<div style="text-align: center;">
+    <img src="https://assets.ccbp.in/frontend/content/react-js/destination-search-output-v2.gif" alt="destination search output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
+</div>
+<br/>
 
-In the project directory, you can run:
+### Design Files
 
-### `npm start`
+<details>
+<summary>Click to view</summary>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/destination-search-sm-output-v2.png)
+- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/destination-search-lg-output-v2.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+</details>
 
-### `npm test`
+### Set Up Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+<summary>Click to view</summary>
 
-### `npm run build`
+- Download dependencies by running `npm install`
+- Start up the app using `npm start`
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Completion Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+<summary>Functionality to be added</summary>
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app must have the following functionalities
 
-### `npm run eject`
+- Initially, all destinations in the `destinationsList` should be displayed
+- When a value is provided in the search input, only the destinations whose names contain the value provided in the search input should be displayed irrespective of the case
+- The `DestinationSearch` component receives the `destinationsList` as a prop. It consists of a list of destination objects with the following properties in each destination object
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  |  Key   | Data Type |
+  | :----: | :-------: |
+  |   id   |  Number   |
+  |  name  |  String   |
+  | imgUrl |  String   |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<details>
+<summary>Components Structure</summary>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br/>
+<div style="text-align: center;">
+    <img src="https://assets.ccbp.in/frontend/content/react-js/destination-search-component-structure-v2-img.png" alt="destination search component structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
+</div>
+<br/>
 
-## Learn More
+</details>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details>
+<summary>Implementation Files</summary>
+<br/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Use these files to complete the implementation:
 
-### Code Splitting
+- `src/components/DestinationSearch/index.js`
+- `src/components/DestinationSearch/index.css`
+- `src/components/DestinationItem/index.js`
+- `src/components/DestinationItem/index.css`
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Important Note
 
-### Analyzing the Bundle Size
+<details>
+<summary>Click to view</summary>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br/>
 
-### Making a Progressive Web App
+**The following instructions are required for the tests to pass**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- The search for the destination should be case insensitive. You can use the `toLowerCase` method to convert a string into lower case letters.
 
-### Advanced Configuration
+  ```js
+  const text = 'Learn JavaScript'
+  console.log(text.toLowerCase()); // learn javascript
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Each `DestinationItem` should have an HTML image element with `alt` attribute value as the value of the key **name** in `destinationsList`
 
-### Deployment
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Resources
 
-### `npm run build` fails to minify
+<details>
+<summary>Image URLs</summary>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png](https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png) alt should be **search icon**
+
+</details>
+
+<details>
+<summary>Colors</summary>
+
+<br/>
+
+<div style="background-color: #252627; width: 150px; padding: 10px; color: white">Hex: #252627</div>
+<div style="background-color: #0f172a; width: 150px; padding: 10px; color: white">Hex: #0f172a</div>
+<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: black">Hex: #f1f5f9</div>
+<div style="background-color: #000000; width: 150px; padding: 10px; color: white">Hex: #000000</div>
+
+</details>
+
+<details>
+<summary>Font-families</summary>
+
+- Roboto
+- Open Sans
+
+</details>
+
+> ### _Things to Keep in Mind_
+>
+> - All components you implement should go in the `src/components` directory.
+> - Don't change the component folder names as those are the files being imported into the tests.
+> - **Do not remove the pre-filled code**
+> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
